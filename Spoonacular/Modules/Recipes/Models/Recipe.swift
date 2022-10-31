@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Recipe: Decodable {
-    let id: Int
-    let title: String
-    let summary: String?
-    let image: URL?
+class Recipe: Decodable {
+    var id: Int = -1
+    var title: String = ""
+    var summary: String?
+    var image: URL?
 }

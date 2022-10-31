@@ -33,8 +33,8 @@ struct RecipeDetailScene: View, RecipeDetailDisplayLogic {
     @ObservedObject private var viewModel: DisplayingData = DisplayingData()
     private class DisplayingData: ObservableObject {
         @Published var image: URL?
-        @Published var title: String = "title"
-        @Published var summary: AttributedString = "summary"
+        @Published var title: String = ""
+        @Published var summary: AttributedString = ""
     }
     
     func display(viewModel: RecipeDetailModel.GetRecipe.ViewModel) {
@@ -45,27 +45,31 @@ struct RecipeDetailScene: View, RecipeDetailDisplayLogic {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack {
-                    if let image = viewModel.image {
-                        AsyncImage(
-                            url: image, content: { image in
-                                image.image?
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(maxWidth: 400)
-                                    
-                            }
-                        )
+            if self.viewModel.title == "" {
+                ProgressView()
+            } else {
+                ScrollView {
+                    VStack {
+                        if let image = viewModel.image {
+                            AsyncImage(
+                                url: image, content: { image in
+                                    image.image?
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(maxWidth: 400)
+                                        
+                                }
+                            )
+                            Spacer().frame(height: 20)
+                        }
+                        Text(viewModel.title)
+                            .font(.system(size: 20, weight: .bold))
+                            .multilineTextAlignment(.center)
                         Spacer().frame(height: 20)
+                        Text(viewModel.summary)
                     }
-                    Text(viewModel.title)
-                        .font(.system(size: 20, weight: .bold))
-                        .multilineTextAlignment(.center)
-                    Spacer().frame(height: 20)
-                    Text(viewModel.summary)
+                    .padding(20)
                 }
-                .padding(20)
             }
         }
         .onAppear() {
