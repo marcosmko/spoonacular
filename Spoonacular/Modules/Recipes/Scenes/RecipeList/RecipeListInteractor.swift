@@ -2,7 +2,7 @@
 //  RecipeListInteractor.swift
 //  Spoonacular
 //
-//  Created by Marcos Kobuchi on 21/10/22.
+//  Created by Marcos Kobuchi on 31/10/22.
 //
 
 import Foundation
@@ -20,29 +20,14 @@ class RecipeListInteractor: RecipeListInteractorProtocol, RecipeListDataStore {
     
     var recipes: [Recipe] = []
     
+    let worker: RecipeWorker
+    init(worker: RecipeWorker = RecipeWorker(recipesApi: RecipesApiService.self)) {
+        self.worker = worker
+    }
+    
     func get(request: RecipeListModel.GetRecipes.Request) {
-        struct Recipes: Decodable {
-            let recipes: [Recipe]?
-            let results: [Recipe]?
-        }
         Task {
-            let apikey = "68dacdce560d4598baf62743ea86a9a7"
-            let url: String
-            if request.text.isEmpty {
-                url = "https://api.spoonacular.com/recipes/random?number=10&apiKey=\(apikey)"
-            } else {
-                url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(apikey)&query=\(request.text)"
-            }
-            
-            let (data, _) = try await URLSession.shared.data(for: URLRequest(url: URL(string: url)!))
-//            if let object = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
-//                let string = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]) {
-//                print(String(data: string, encoding: .utf8) as! NSString)
-//            }
-            
-            let recipes: Recipes = try JSONDecoder().decode(Recipes.self, from: data)
-            self.recipes = recipes.recipes ?? recipes.results ?? []
-            
+            self.recipes = try self.worker.getRecipes(query: request.text)
             await self.presenter?.present(response: RecipeListModel.GetRecipes.Response(
                 recipes: self.recipes
             ))
