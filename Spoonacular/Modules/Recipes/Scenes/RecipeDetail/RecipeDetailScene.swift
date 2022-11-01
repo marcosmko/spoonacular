@@ -35,18 +35,21 @@ struct RecipeDetailScene: View, RecipeDetailDisplayLogic {
         @Published var image: URL?
         @Published var title: String = ""
         @Published var summary: AttributedString = ""
+        @Published var isFavorited: Bool = false
     }
     
     func display(viewModel: RecipeDetailModel.GetRecipe.ViewModel) {
         self.viewModel.image = viewModel.image
         self.viewModel.title = viewModel.title
         self.viewModel.summary = viewModel.summary.with(font: .system(size: 16))
+        self.viewModel.isFavorited = viewModel.isFavorited
     }
     
     var body: some View {
         NavigationView {
             if self.viewModel.title == "" {
                 ProgressView()
+                    .navigationTitle("Recipe")
             } else {
                 ScrollView {
                     VStack {
@@ -70,6 +73,17 @@ struct RecipeDetailScene: View, RecipeDetailDisplayLogic {
                     }
                     .padding(20)
                 }
+                .navigationTitle("Recipe")
+                .toolbar(content: {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            interactor?.set(request: RecipeDetailModel.SetFavorite.Request())
+                        } label: {
+                            Image(systemName: viewModel.isFavorited ? "star.fill" : "star")
+                        }
+
+                    }
+                })
             }
         }
         .onAppear() {

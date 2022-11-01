@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-final class Recipe: NSManagedObject, DatabaseObject, Identifiable {
+final class Recipe: PersistentObject, DatabaseObject, Identifiable {
     @NSManaged var id: Int
     @NSManaged var title: String
     @NSManaged var summary: String?

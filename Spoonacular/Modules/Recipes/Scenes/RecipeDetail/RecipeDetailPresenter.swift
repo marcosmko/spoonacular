@@ -30,7 +30,8 @@ class RecipeDetailPresenter: RecipeDetailPresenterProtocol {
             await self.view?.value.display(viewModel: RecipeDetailModel.GetRecipe.ViewModel(
                 image: response.recipe.image,
                 title: response.recipe.title,
-                summary: AttributedString(summary)
+                summary: AttributedString(summary),
+                isFavorited: response.recipe.isFavorited
             ))
         } catch {
             // show error message

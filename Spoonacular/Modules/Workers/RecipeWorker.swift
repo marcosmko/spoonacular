@@ -9,9 +9,14 @@ import Foundation
 
 class RecipeWorker {
     private let recipesApi: RecipesApiProtocol.Type
+    private let recipesDatabase: RecipesDatabaseProtocol.Type
     
-    init(recipesApi: RecipesApiProtocol.Type) {
+    init(
+        recipesApi: RecipesApiProtocol.Type,
+        recipesDatabase: RecipesDatabaseProtocol.Type
+    ) {
         self.recipesApi = recipesApi
+        self.recipesDatabase = recipesDatabase
     }
     
     func getRecipes(query: String) throws -> [Recipe] {
@@ -24,5 +29,15 @@ class RecipeWorker {
     
     func getRecipe(id: Int) throws -> Recipe {
         return try self.recipesApi.getRecipe(id: id)
+    }
+    
+    func favorite(recipe: Recipe) throws {
+        recipe.isFavorited = true
+        try self.recipesDatabase.save(recipe)
+    }
+    
+    func unfavorite(recipe: Recipe) throws {
+        recipe.isFavorited = false
+        try self.recipesDatabase.save(recipe)
     }
 }

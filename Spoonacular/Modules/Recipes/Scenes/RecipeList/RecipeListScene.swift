@@ -14,14 +14,11 @@ protocol RecipeListDisplayLogic {
 }
 
 struct RecipeListScene: View, RecipeListDisplayLogic {
-    weak var hostingController: UIHostingController<RecipeListScene>?
-    
     lazy var view: Ref<RecipeListDisplayLogic> = Ref(self)
     var interactor: (any RecipeListInteractorProtocol)?
     var router: (RecipeListRouterProtocol & RecipeListDataPassing)?
     
-    init(hostingController: UIHostingController<RecipeListScene>? = nil) {
-        self.hostingController = hostingController
+    init() {
         let interactor = RecipeListInteractor()
         let presenter = RecipeListPresenter()
         let router = RecipeListRouter()
@@ -33,7 +30,6 @@ struct RecipeListScene: View, RecipeListDisplayLogic {
         router.view = self.view
     }
     
-    @State var showView = false
     @State private var searchText = ""
     
     @ObservedObject private var viewModel: DisplayingData = DisplayingData()

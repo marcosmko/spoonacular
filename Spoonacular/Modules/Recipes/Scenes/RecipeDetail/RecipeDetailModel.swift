@@ -18,6 +18,11 @@ enum RecipeDetailModel {
             let image: URL?
             let title: String
             let summary: AttributedString
+            let isFavorited: Bool
+        }
+    }
+    enum SetFavorite {
+        struct Request {
         }
     }
 }

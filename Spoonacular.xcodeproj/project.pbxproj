@@ -51,6 +51,8 @@
 		F7F422B02910786200306A39 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F422AF2910786200306A39 /* DatabaseService.swift */; };
 		F7F422B22910787600306A39 /* PersistentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F422B12910787600306A39 /* PersistentObject.swift */; };
 		F7F422B429107C4100306A39 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F422B329107C4100306A39 /* Operators.swift */; };
+		F7F422B72910A1AC00306A39 /* RecipesDatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F422B62910A1AB00306A39 /* RecipesDatabaseProtocol.swift */; };
+		F7F422B92910A20A00306A39 /* RecipesDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F422B82910A20A00306A39 /* RecipesDatabaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,8 @@
 		F7F422AF2910786200306A39 /* DatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		F7F422B12910787600306A39 /* PersistentObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentObject.swift; sourceTree = "<group>"; };
 		F7F422B329107C4100306A39 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		F7F422B62910A1AB00306A39 /* RecipesDatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDatabaseProtocol.swift; sourceTree = "<group>"; };
+		F7F422B82910A20A00306A39 /* RecipesDatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesDatabaseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +357,7 @@
 		F7F422A129106B2700306A39 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F7F422B52910A19800306A39 /* DatabaseServices */,
 				F7F422A229106B4300306A39 /* WebApiServices */,
 			);
 			path = Services;
@@ -370,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				F7F422A729106B9000306A39 /* RecipesApiProtocol.swift */,
+				F7F422B62910A1AB00306A39 /* RecipesDatabaseProtocol.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -380,6 +386,14 @@
 				F7F422A929106BFA00306A39 /* RecipeWorker.swift */,
 			);
 			path = Workers;
+			sourceTree = "<group>";
+		};
+		F7F422B52910A19800306A39 /* DatabaseServices */ = {
+			isa = PBXGroup;
+			children = (
+				F7F422B82910A20A00306A39 /* RecipesDatabaseService.swift */,
+			);
+			path = DatabaseServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -531,6 +545,7 @@
 				F7F422872910690F00306A39 /* JSONDecoderExtension.swift in Sources */,
 				F7F422952910698B00306A39 /* Request.swift in Sources */,
 				F7F4226C2910146600306A39 /* RecipeListInteractor.swift in Sources */,
+				F7F422B72910A1AC00306A39 /* RecipesDatabaseProtocol.swift in Sources */,
 				F7F422B02910786200306A39 /* DatabaseService.swift in Sources */,
 				F7F4227E29104E8900306A39 /* RecipeDetailPresenter.swift in Sources */,
 				F7F422B22910787600306A39 /* PersistentObject.swift in Sources */,
@@ -548,6 +563,7 @@
 				F7F4226F2910148500306A39 /* Ref.swift in Sources */,
 				F7F42272291019F000306A39 /* Recipe.swift in Sources */,
 				F7F422962910698B00306A39 /* RequestError.swift in Sources */,
+				F7F422B92910A20A00306A39 /* RecipesDatabaseService.swift in Sources */,
 				F7F4227D29104E8900306A39 /* RecipeDetailModel.swift in Sources */,
 				F7F422922910698B00306A39 /* SHA1.swift in Sources */,
 				F7F422912910698B00306A39 /* ServerError.swift in Sources */,

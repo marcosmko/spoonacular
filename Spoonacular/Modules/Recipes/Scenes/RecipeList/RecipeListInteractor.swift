@@ -21,7 +21,12 @@ class RecipeListInteractor: RecipeListInteractorProtocol, RecipeListDataStore {
     var recipes: [Recipe] = []
     
     let worker: RecipeWorker
-    init(worker: RecipeWorker = RecipeWorker(recipesApi: RecipesApiService.self)) {
+    init(
+        worker: RecipeWorker = RecipeWorker(
+            recipesApi: RecipesApiService.self,
+            recipesDatabase: RecipesDatabaseService.self
+        )
+    ) {
         self.worker = worker
     }
     
