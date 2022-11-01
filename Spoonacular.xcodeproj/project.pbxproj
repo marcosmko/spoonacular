@@ -46,6 +46,11 @@
 		F7F422A429106B4A00306A39 /* RecipesApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F422A329106B4A00306A39 /* RecipesApiService.swift */; };
 		F7F422A829106B9000306A39 /* RecipesApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F422A729106B9000306A39 /* RecipesApiProtocol.swift */; };
 		F7F422AA29106BFA00306A39 /* RecipeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F422A929106BFA00306A39 /* RecipeWorker.swift */; };
+		F7F422AC2910735000306A39 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F422AB2910735000306A39 /* SplashView.swift */; };
+		F7F422AE291075A700306A39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7F422AD291075A700306A39 /* LaunchScreen.storyboard */; };
+		F7F422B02910786200306A39 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F422AF2910786200306A39 /* DatabaseService.swift */; };
+		F7F422B22910787600306A39 /* PersistentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F422B12910787600306A39 /* PersistentObject.swift */; };
+		F7F422B429107C4100306A39 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F422B329107C4100306A39 /* Operators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +113,11 @@
 		F7F422A329106B4A00306A39 /* RecipesApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesApiService.swift; sourceTree = "<group>"; };
 		F7F422A729106B9000306A39 /* RecipesApiProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesApiProtocol.swift; sourceTree = "<group>"; };
 		F7F422A929106BFA00306A39 /* RecipeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeWorker.swift; sourceTree = "<group>"; };
+		F7F422AB2910735000306A39 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		F7F422AD291075A700306A39 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F7F422AF2910786200306A39 /* DatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		F7F422B12910787600306A39 /* PersistentObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentObject.swift; sourceTree = "<group>"; };
+		F7F422B329107C4100306A39 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +209,8 @@
 		F7F422532910115900306A39 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				F7F422AD291075A700306A39 /* LaunchScreen.storyboard */,
+				F7F422AB2910735000306A39 /* SplashView.swift */,
 				F7F422242910111100306A39 /* SpoonacularApp.swift */,
 			);
 			path = Application;
@@ -256,6 +268,7 @@
 		F7F4226D2910147300306A39 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F7F422B329107C4100306A39 /* Operators.swift */,
 				F7F4229929106A6400306A39 /* CustomError.swift */,
 				F7F42297291069F100306A39 /* ISO8601DateFormatter.swift */,
 				F7F4226E2910148500306A39 /* Ref.swift */,
@@ -317,7 +330,9 @@
 		F7F422892910697400306A39 /* DatabaseService */ = {
 			isa = PBXGroup;
 			children = (
+				F7F422AF2910786200306A39 /* DatabaseService.swift */,
 				F7F4222D2910111300306A39 /* Persistence.swift */,
+				F7F422B12910787600306A39 /* PersistentObject.swift */,
 			);
 			path = DatabaseService;
 			sourceTree = "<group>";
@@ -471,6 +486,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7F422AE291075A700306A39 /* LaunchScreen.storyboard in Resources */,
 				F7F4222C2910111300306A39 /* Preview Assets.xcassets in Resources */,
 				F7F422292910111300306A39 /* Assets.xcassets in Resources */,
 			);
@@ -515,15 +531,19 @@
 				F7F422872910690F00306A39 /* JSONDecoderExtension.swift in Sources */,
 				F7F422952910698B00306A39 /* Request.swift in Sources */,
 				F7F4226C2910146600306A39 /* RecipeListInteractor.swift in Sources */,
+				F7F422B02910786200306A39 /* DatabaseService.swift in Sources */,
 				F7F4227E29104E8900306A39 /* RecipeDetailPresenter.swift in Sources */,
+				F7F422B22910787600306A39 /* PersistentObject.swift in Sources */,
 				F7F4227F29104E8900306A39 /* RecipeDetailScene.swift in Sources */,
 				F7F4228129104E8900306A39 /* RecipeDetailInteractor.swift in Sources */,
 				F7F422762910350700306A39 /* URLSessionExtension.swift in Sources */,
 				F7F4229F29106A9B00306A39 /* DataExtension.swift in Sources */,
+				F7F422B429107C4100306A39 /* Operators.swift in Sources */,
 				F7F422692910146600306A39 /* RecipeListModel.swift in Sources */,
 				F7F422942910698B00306A39 /* RequestCache.swift in Sources */,
 				F7F4229E29106A9B00306A39 /* CFAbsoluteTimeExtension.swift in Sources */,
 				F7F4229A29106A6400306A39 /* CustomError.swift in Sources */,
+				F7F422AC2910735000306A39 /* SplashView.swift in Sources */,
 				F7F422AA29106BFA00306A39 /* RecipeWorker.swift in Sources */,
 				F7F4226F2910148500306A39 /* Ref.swift in Sources */,
 				F7F42272291019F000306A39 /* Recipe.swift in Sources */,
@@ -694,6 +714,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -722,6 +743,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
