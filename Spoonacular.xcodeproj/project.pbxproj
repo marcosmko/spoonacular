@@ -13,7 +13,7 @@
 		F7F4222C2910111300306A39 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7F4222B2910111300306A39 /* Preview Assets.xcassets */; };
 		F7F4222E2910111300306A39 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4222D2910111300306A39 /* Persistence.swift */; };
 		F7F422312910111300306A39 /* Spoonacular.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7F4222F2910111300306A39 /* Spoonacular.xcdatamodeld */; };
-		F7F4223B2910111300306A39 /* SpoonacularTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4223A2910111300306A39 /* SpoonacularTests.swift */; };
+		F7F4223B2910111300306A39 /* RecipeDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4223A2910111300306A39 /* RecipeDetailTests.swift */; };
 		F7F422452910111300306A39 /* SpoonacularUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F422442910111300306A39 /* SpoonacularUITests.swift */; };
 		F7F422472910111300306A39 /* SpoonacularUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F422462910111300306A39 /* SpoonacularUITestsLaunchTests.swift */; };
 		F7F422682910146600306A39 /* RecipeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F422632910146500306A39 /* RecipeListPresenter.swift */; };
@@ -81,7 +81,7 @@
 		F7F4222D2910111300306A39 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F7F422302910111300306A39 /* Spoonacular.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spoonacular.xcdatamodel; sourceTree = "<group>"; };
 		F7F422362910111300306A39 /* SpoonacularTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpoonacularTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7F4223A2910111300306A39 /* SpoonacularTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoonacularTests.swift; sourceTree = "<group>"; };
+		F7F4223A2910111300306A39 /* RecipeDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailTests.swift; sourceTree = "<group>"; };
 		F7F422402910111300306A39 /* SpoonacularUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpoonacularUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F422442910111300306A39 /* SpoonacularUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoonacularUITests.swift; sourceTree = "<group>"; };
 		F7F422462910111300306A39 /* SpoonacularUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoonacularUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		F7F422392910111300306A39 /* SpoonacularTests */ = {
 			isa = PBXGroup;
 			children = (
-				F7F4223A2910111300306A39 /* SpoonacularTests.swift */,
+				F7F4223A2910111300306A39 /* RecipeDetailTests.swift */,
 			);
 			path = SpoonacularTests;
 			sourceTree = "<group>";
@@ -574,7 +574,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7F4223B2910111300306A39 /* SpoonacularTests.swift in Sources */,
+				F7F4223B2910111300306A39 /* RecipeDetailTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
