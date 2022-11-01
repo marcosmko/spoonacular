@@ -44,5 +44,5 @@ Some common procedures that happens during development:
 
 Here I will explain some general thoughts about programming.
 
-* Usually, an architecture such as VIP is complex and there are a lot of boilerplate, so I prefer using it only for projects that may have a long lifetime or could have several developers working together.
+* Usually, an architecture such as VIP is complex and there are a lot of boilerplate, so I prefer using it only for projects that may have a long lifetime or has several developers working together.
 * For proofs of concepts or features that must be delivered as fast as possible, I prefer using simpler architectures such as MVC Cocoa (for storyboard based apps) or MVVM (for SwiftUI).
