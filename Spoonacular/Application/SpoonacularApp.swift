@@ -22,8 +22,6 @@ struct SpoonacularApp: App {
                     }
             } else {
                 RecipeListScene()
-//                ContentView()
-//                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
             }
         }
     }

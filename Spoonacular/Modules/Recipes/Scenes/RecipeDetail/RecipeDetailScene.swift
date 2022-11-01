@@ -46,48 +46,46 @@ struct RecipeDetailScene: View, RecipeDetailDisplayLogic {
     }
     
     var body: some View {
-        NavigationView {
-            if self.viewModel.title == "" {
-                ProgressView()
-                    .navigationTitle("Recipe")
-            } else {
-                ScrollView {
-                    VStack {
-                        if let image = viewModel.image {
-                            AsyncImage(
-                                url: image, content: { image in
-                                    image.image?
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(maxWidth: 400)
-                                        
-                                }
-                            )
-                            Spacer().frame(height: 20)
-                        }
-                        Text(viewModel.title)
-                            .font(.system(size: 20, weight: .bold))
-                            .multilineTextAlignment(.center)
-                        Spacer().frame(height: 20)
-                        Text(viewModel.summary)
-                    }
-                    .padding(20)
-                }
+        if self.viewModel.title == "" {
+            ProgressView()
                 .navigationTitle("Recipe")
-                .toolbar(content: {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            interactor?.set(request: RecipeDetailModel.SetFavorite.Request())
-                        } label: {
-                            Image(systemName: viewModel.isFavorited ? "star.fill" : "star")
-                        }
-
+                .onAppear() {
+                    interactor?.get(request: RecipeDetailModel.GetRecipe.Request())
+                }
+        } else {
+            ScrollView {
+                VStack {
+                    if let image = viewModel.image {
+                        AsyncImage(
+                            url: image, content: { image in
+                                image.image?
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: 400)
+                                    
+                            }
+                        )
+                        Spacer().frame(height: 20)
                     }
-                })
+                    Text(viewModel.title)
+                        .font(.system(size: 20, weight: .bold))
+                        .multilineTextAlignment(.center)
+                    Spacer().frame(height: 20)
+                    Text(viewModel.summary)
+                }
+                .padding(20)
             }
-        }
-        .onAppear() {
-            interactor?.get(request: RecipeDetailModel.GetRecipe.Request())
+            .navigationTitle("Recipe")
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        interactor?.set(request: RecipeDetailModel.SetFavorite.Request())
+                    } label: {
+                        Image(systemName: viewModel.isFavorited ? "star.fill" : "star")
+                    }
+
+                }
+            })
         }
     }
 }

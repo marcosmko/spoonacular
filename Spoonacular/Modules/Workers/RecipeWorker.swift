@@ -20,11 +20,23 @@ class RecipeWorker {
     }
     
     func getRecipes(query: String) throws -> [Recipe] {
+        var recipes: [Recipe]
         if query.isEmpty {
-            return try self.recipesApi.getRandomRecipes()
+            recipes = try self.recipesApi.getRandomRecipes()
         } else {
-            return try self.recipesApi.getComplexSearch(query: query)
+            recipes = try self.recipesApi.getComplexSearch(query: query)
         }
+        
+        // if we have in local cache, switch
+        let cachedRecipes: [Recipe] = try self.recipesDatabase.fetchAll()
+        for (index, recipe) in recipes.enumerated() {
+            // need to check if this doesn't throw
+            if let cachedRecipe = cachedRecipes.first(where: { $0.id == recipe.id }) {
+                recipes[index] = cachedRecipe
+            }
+        }
+        
+        return recipes
     }
     
     func getRecipe(id: Int) throws -> Recipe {
